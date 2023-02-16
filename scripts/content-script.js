@@ -4,7 +4,18 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
     changeURL(url);
 });
 
-let youtubeShortsContent;
+    let youtubeShortsContent;
+
+document.addEventListener('DOMContentLoaded', function(){
+    youtubeShortsContent = document.getElementById("content");
+    console.log(youtubeShortsContent);
+
+    testiElementti = document.getElementById("content-wrapper");
+    console.log(testiElementti);
+
+    var testiElementti2 = document.querySelectorAll("div");
+    console.log(testiElementti2);
+});
 
 
 function changeURL(url){
@@ -15,13 +26,12 @@ function changeURL(url){
     button.innerHTML = 'Open in new tab';
     button.id = "button-newTab";
 
-    youtubeShortsContent = document.getElementById("content");
-    console.log(youtubeShortsContent);
+
 
     if(urli.includes("https://www.youtube.com/shorts")){
         console.log("is shorts");
         // yritetään insertata nappi samaan html elementiin jossa like napit yms on
-        youtubeShortsContent.body.appendChild(button);
+        testiElementti2.appendChild(button);
 
     } else {
         console.log("nope");
