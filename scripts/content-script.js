@@ -10,7 +10,7 @@ let youtubeShortsContent;
 function changeURL(url){
     let urli = url;
 
-
+// luodaan paska nappi 
     var button = document.createElement('button');
     button.innerHTML = 'Open in new tab';
     button.id = "button-newTab";
@@ -20,7 +20,8 @@ function changeURL(url){
 
     if(urli.includes("https://www.youtube.com/shorts")){
         console.log("is shorts");
-        document.body.appendChild(button);
+        // yritetään insertata nappi samaan html elementiin jossa like napit yms on
+        youtubeShortsContent.body.appendChild(button);
 
     } else {
         console.log("nope");
