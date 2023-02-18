@@ -1,7 +1,14 @@
-/* chrome.tabs.onUpdated.addListener((tabId, tab) => {
-    if(tab.url && tab.url.includes("youtube.com/shorts")){
-        chrome.tabs.sendMessage(tabId, {
-            type: "NEW"
+try{
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
+    if(changeInfo.status == 'complete'){
+        chrome.scripting.executeScript({
+            files: ['scripts/content-script.js'],
+            target: {tabId: tab.id}
         });
     }
-}) */
+});
+
+} catch(e){
+    console.log(e);
+}

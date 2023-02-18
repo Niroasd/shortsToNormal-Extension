@@ -11,17 +11,17 @@
     },
 
     "permissions": [
-        "storage", "tabs", "activeTab"
+        "storage", "tabs", "activeTab", "scripting"
     ],
     "content_scripts": [
         {
             "js": ["scripts/content-script.js"],
             "matches": [
                 "https://www.youtube.com/shorts/*"
-            ]
+            ],
+            "run_at": "document_end"
         }
     ],
-
     "action": {
         "default_popup": "wrap.html",
         "default_icon": "images/smallcutie.png"
